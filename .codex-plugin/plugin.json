@@ -1,0 +1,9 @@
+{
+  "name": "premium-agent-skills",
+  "version": "0.1.0",
+  "description": "Reusable repo-improvement and avatar-motion workflow skills for Codex.",
+  "author": "Naim Katiman",
+  "homepage": "https://github.com/naimkatiman/premium-agent-skills",
+  "license": "MIT",
+  "skills": "./skills/"
+}

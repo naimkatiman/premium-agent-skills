@@ -1,0 +1,19 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" fill="none" role="img" aria-label="Agent avatar concept one">
+  <defs>
+    <linearGradient id="g1" x1="20" y1="16" x2="108" y2="112" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="40" y1="34" x2="88" y2="86" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#E5E7EB" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="64" r="54" fill="#0B1020"/>
+  <path d="M64 18c20 0 36 6 46 20-6 4-10 10-12 17-6-5-13-8-22-8H52c-9 0-16 3-22 8-2-7-6-13-12-17 10-14 26-20 46-20z" fill="url(#g1)"/>
+  <path d="M36 48h56c10 0 18 8 18 18v8c0 21-17 38-38 38H56c-21 0-38-17-38-38v-8c0-10 8-18 18-18z" fill="url(#g1)"/>
+  <path d="M47 63c6-7 12-10 17-10s11 3 17 10c-4 11-10 17-17 17s-13-6-17-17z" fill="url(#g2)"/>
+  <circle cx="47" cy="70" r="4" fill="#0B1020"/>
+  <circle cx="81" cy="70" r="4" fill="#0B1020"/>
+  <path d="M58 88c4 4 8 6 12 6s8-2 12-6" stroke="#E5E7EB" stroke-width="4" stroke-linecap="round"/>
+</svg>

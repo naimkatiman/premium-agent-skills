@@ -1,0 +1,21 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" fill="none" role="img" aria-label="Agent avatar concept two">
+  <defs>
+    <linearGradient id="owlA" x1="22" y1="20" x2="104" y2="108" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F59E0B"/>
+      <stop offset="1" stop-color="#F97316"/>
+    </linearGradient>
+    <linearGradient id="owlB" x1="36" y1="32" x2="92" y2="92" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF7ED"/>
+      <stop offset="1" stop-color="#FFEDD5"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="10" width="108" height="108" rx="36" fill="#0F172A"/>
+  <path d="M42 28l14 16H40L42 28zm44 0l2 16H72l14-16z" fill="url(#owlB)"/>
+  <path d="M28 56c0-16 13-29 29-29h14c16 0 29 13 29 29v21c0 22-18 40-40 40h-2c-22 0-40-18-40-40V56z" fill="url(#owlA)"/>
+  <circle cx="47" cy="67" r="14" fill="url(#owlB)"/>
+  <circle cx="81" cy="67" r="14" fill="url(#owlB)"/>
+  <circle cx="47" cy="67" r="5" fill="#0F172A"/>
+  <circle cx="81" cy="67" r="5" fill="#0F172A"/>
+  <path d="M64 78l7 8h-14l7-8z" fill="#0F172A"/>
+  <path d="M48 95c5 4 10 6 16 6s11-2 16-6" stroke="#FFF7ED" stroke-width="4" stroke-linecap="round"/>
+</svg>

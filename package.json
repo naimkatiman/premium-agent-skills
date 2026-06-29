@@ -1,0 +1,46 @@
+{
+  "name": "premium-agent-skills",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Two open-source, cross-agent Agent Skills (Repo Improvement Architect and Avatar Motion Forge) packaged for Claude Code, Codex, and OpenAI tool calling.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Naim Katiman",
+  "homepage": "https://github.com/naimkatiman/premium-agent-skills#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naimkatiman/premium-agent-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/naimkatiman/premium-agent-skills/issues"
+  },
+  "keywords": [
+    "agent-skills",
+    "claude-code",
+    "codex",
+    "openai",
+    "mcp",
+    "skills",
+    "plugin"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "packages/core",
+    "packages/openai-tools"
+  ],
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "validate:json": "node scripts/validate-json.mjs",
+    "validate:svg": "node scripts/validate-svg.mjs",
+    "verify": "npm run typecheck && npm run test && npm run validate:json && npm run validate:svg"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

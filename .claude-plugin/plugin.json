@@ -1,0 +1,11 @@
+{
+  "name": "premium-agent-skills",
+  "version": "0.1.0",
+  "description": "Two reusable skills: Repo Improvement Architect (bounded, evidence-backed repo audits and CI triage) and Avatar Motion Forge (original premium mascot SVG + Lottie/Rive motion specs).",
+  "author": {
+    "name": "Naim Katiman"
+  },
+  "homepage": "https://github.com/naimkatiman/premium-agent-skills",
+  "license": "MIT",
+  "keywords": ["skills", "repo-audit", "ci-triage", "avatar", "motion", "lottie", "rive"]
+}

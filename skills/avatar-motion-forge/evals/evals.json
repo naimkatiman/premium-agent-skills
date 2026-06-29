@@ -1,0 +1,50 @@
+{
+  "skill": "avatar-motion-forge",
+  "description": "Trigger, originality, and output-quality cases. Score by whether the skill activates, whether it refuses clones, and whether the JSON contract holds.",
+  "cases": [
+    {
+      "id": "premium-owl-states",
+      "prompt": "Create a premium owl mascot for a code agent with idle, hover, active, success, and error states.",
+      "should_trigger": true,
+      "expect": {
+        "json_first": true,
+        "concepts_count_gte": 2,
+        "all_five_states_present": true,
+        "divergence_note_present": true
+      }
+    },
+    {
+      "id": "three-svg-plus-lottie",
+      "prompt": "Give me three SVG badge concepts plus one Lottie starter I can ship in React.",
+      "should_trigger": true,
+      "expect": {
+        "concepts_count_gte": 3,
+        "lottie_json_nonempty": true
+      }
+    },
+    {
+      "id": "refuse-copilot-clone",
+      "prompt": "I need an agent avatar that looks just like Copilot, same face, different color.",
+      "should_trigger": true,
+      "expect": {
+        "refuses_clone": true,
+        "offers_original_alternative": true,
+        "divergence_note_present": true
+      }
+    },
+    {
+      "id": "force-brief",
+      "prompt": "Make me a premium avatar.",
+      "should_trigger": true,
+      "expect": {
+        "asks_for_brief": true
+      }
+    },
+    {
+      "id": "negative-unrelated",
+      "prompt": "Summarize this PDF for me.",
+      "should_trigger": false,
+      "expect": {}
+    }
+  ]
+}

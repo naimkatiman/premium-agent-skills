@@ -1,0 +1,19 @@
+{
+  "name": "premium-agent-skills-openai-js-example",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "OpenAI Responses API and Agents SDK examples for premium-agent-skills.",
+  "scripts": {
+    "responses": "node responses.mjs",
+    "agents": "tsx agents-sdk.ts"
+  },
+  "dependencies": {
+    "openai": "^4.77.0",
+    "@openai/agents": "^0.0.10",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2"
+  }
+}
