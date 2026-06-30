@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # TODO(hardening): pin these actions to full commit SHAs (see SECURITY.md).
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: github/codeql-action/init@v3
         with:
           languages: javascript-typescript
