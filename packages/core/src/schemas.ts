@@ -96,7 +96,7 @@ export const RivePlanSchema = z.object({
 export const AvatarMotionSpecSchema = z.object({
   concepts: z.array(AvatarConceptSchema).min(1),
   motion_spec: MotionSpecSchema,
-  lottie_json: z.record(z.unknown()).default({}),
+  lottie_json: z.record(z.string(), z.unknown()).default({}),
   rive_plan: RivePlanSchema
 });
 export type AvatarMotionSpec = z.infer<typeof AvatarMotionSpecSchema>;
