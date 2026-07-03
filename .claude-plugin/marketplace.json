@@ -1,0 +1,20 @@
+{
+  "name": "premium-agent-skills",
+  "description": "Marketplace for the premium-agent-skills plugin: two cross-agent Agent Skills (Repo Improvement Architect + Avatar Motion Forge) for Claude Code, Codex, and OpenAI tool calling.",
+  "owner": {
+    "name": "naimkatiman"
+  },
+  "plugins": [
+    {
+      "name": "premium-agent-skills",
+      "description": "Two reusable skills: Repo Improvement Architect (bounded, evidence-backed repo audits and CI triage) and Avatar Motion Forge (original premium mascot SVG + Lottie/Rive motion specs).",
+      "version": "0.1.1",
+      "source": "./plugins/premium-agent-skills",
+      "author": {
+        "name": "naimkatiman"
+      },
+      "category": "workflow",
+      "homepage": "https://github.com/naimkatiman/premium-agent-skills"
+    }
+  ]
+}
