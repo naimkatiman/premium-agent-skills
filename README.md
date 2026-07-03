@@ -27,8 +27,8 @@ Turns a repository, diff, issue, or failing CI run into a prioritized improvemen
 plan plus the smallest safe next change, with evidence and verification steps.
 Read-only by default; it edits only after you approve a scoped change.
 
-- Skill: [`skills/repo-improvement-architect/SKILL.md`](skills/repo-improvement-architect/SKILL.md)
-- Output contract: [`references/output-schema.md`](skills/repo-improvement-architect/references/output-schema.md)
+- Skill: [`plugins/premium-agent-skills/skills/repo-improvement-architect/SKILL.md`](plugins/premium-agent-skills/skills/repo-improvement-architect/SKILL.md)
+- Output contract: [`references/output-schema.md`](plugins/premium-agent-skills/skills/repo-improvement-architect/references/output-schema.md)
 
 ### Avatar Motion Forge
 
@@ -37,8 +37,8 @@ spec (idle, hover, active, success, error), a Lottie starter, and a Rive
 storyboard. Enforces an originality gate; it will not clone an existing product
 mascot.
 
-- Skill: [`skills/avatar-motion-forge/SKILL.md`](skills/avatar-motion-forge/SKILL.md)
-- Originality gate: [`references/originality-checklist.md`](skills/avatar-motion-forge/references/originality-checklist.md)
+- Skill: [`plugins/premium-agent-skills/skills/avatar-motion-forge/SKILL.md`](plugins/premium-agent-skills/skills/avatar-motion-forge/SKILL.md)
+- Originality gate: [`references/originality-checklist.md`](plugins/premium-agent-skills/skills/avatar-motion-forge/references/originality-checklist.md)
 
 ## Install
 
@@ -73,15 +73,21 @@ and [`examples/openai-python`](examples/openai-python/). A remote-MCP config is 
 ## Repository layout
 
 ```text
-skills/            reusable skill folders (SKILL.md + references/scripts/evals)
-.claude-plugin/    Claude Code plugin manifest
-.codex-plugin/     Codex plugin manifest
-packages/core/     shared Zod schemas + validators for the output contracts
-packages/openai-tools/  function-tool and MCP definitions
-examples/          Claude Code, Codex, OpenAI JS/Python integration demos
-assets/            original SVG concepts + Lottie starter
-scripts/           JSON and SVG validators used by the verify chain
+plugins/premium-agent-skills/   installable plugin bundle (no package.json):
+  .claude-plugin/plugin.json     Claude Code plugin manifest
+  skills/                        the two skill folders (SKILL.md + references/scripts/evals)
+.claude-plugin/marketplace.json  marketplace manifest (source -> plugins/premium-agent-skills)
+.codex-plugin/plugin.json        Codex plugin manifest
+packages/core/                   shared Zod schemas + validators for the output contracts
+packages/openai-tools/           function-tool and MCP definitions
+examples/                        Claude Code, Codex, OpenAI JS/Python integration demos
+assets/                          original SVG concepts + Lottie starter
+scripts/                         JSON and SVG validators used by the verify chain
 ```
+
+The plugin bundle under `plugins/premium-agent-skills/` deliberately carries no
+`package.json`; the npm/TypeScript project at the repo root is developer tooling
+and is not part of the installed plugin.
 
 ## Develop
 
