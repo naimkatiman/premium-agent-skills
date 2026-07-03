@@ -1,13 +1,18 @@
 # Social preview
 
-Drop a `1280×640` PNG named `social-preview.png` here and set it as the
-repository social preview (GitHub → Settings → General → Social preview).
+`social-preview.png` (1280x640) ships here and is used as the README hero.
 
-Suggested composition:
+Composition: the concept-one mascot on a dark field, the "Premium Agent Skills"
+wordmark, the two skill names, and the MIT/repo footer.
 
-- Left: one of the `assets/icons/` concepts at large scale on a dark field.
-- Right: the wordmark "Premium Agent Skills" and the two skill names.
-- Palette: pull from the chosen concept's gradient (violet→cyan, amber, or teal).
+## Setting it as the repository social preview
 
-This is a placeholder. The binary PNG is intentionally not committed in v0.1.0
-to keep the initial tree text-only and diff-friendly.
+GitHub does not expose social-preview upload via the REST API, so this is a
+one-time manual step: repository Settings, General, Social preview, upload
+`social-preview.png`. The committed file is the source of truth; re-upload it
+there whenever it changes.
+
+## Regenerating
+
+The image is rendered from a small HTML design at 1280x640. To refresh it, adjust
+the design, screenshot at a 1280x640 viewport, and replace this file.

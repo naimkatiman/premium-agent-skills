@@ -12,6 +12,8 @@ Built on the open Agent Skills format (`SKILL.md` + optional `references/`,
 `scripts/`, `evals/`), so the same skill content runs across skills-capable
 agents instead of being locked to one runtime.
 
+![Premium Agent Skills](assets/social-preview/social-preview.png)
+
 ## Why this exists
 
 A skill is the stable unit of reuse. Plugins, MCP, and function tools are just
@@ -117,11 +119,13 @@ divergence note. See [`originality-checklist.md`](skills/avatar-motion-forge/ref
 
 | Component | Status |
 |---|---|
-| Repo Improvement Architect | beta |
-| Avatar Motion Forge | beta |
+| Repo Improvement Architect | stable (v0.1.1) |
+| Avatar Motion Forge | stable (v0.1.1) |
+| Claude Code / Codex plugin install | verified |
 | Lottie starter assets | shipped |
+| Social preview image | shipped |
 | Rive production exports | roadmap (v0.2) |
-| Hosted MCP server | not included in v0.1.0 |
+| Hosted MCP server | roadmap (not bundled) |
 
 ## License
 
