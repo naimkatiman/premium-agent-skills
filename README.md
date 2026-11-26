@@ -145,7 +145,7 @@ divergence note. See [`originality-checklist.md`](skills/avatar-motion-forge/ref
 |---|---|
 | Repo Improvement Architect | stable (v0.1.1) |
 | Avatar Motion Forge | stable (v0.1.1) |
-| Reconcile | new (fixture-tested) |
+| Reconcile | new (v0.1.2, fixture-tested) |
 | Claude Code / Codex plugin install | verified |
 | Lottie starter assets | shipped |
 | Social preview image | shipped |
