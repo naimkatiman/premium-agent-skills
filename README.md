@@ -1,12 +1,14 @@
 # Premium Agent Skills
 
-Two open-source Agent Skills for Claude Code, Codex, and OpenAI-style tool
+Three open-source Agent Skills for Claude Code, Codex, and OpenAI-style tool
 integrations:
 
 - **Repo Improvement Architect**, repo audits, CI triage, and bounded,
   evidence-backed refactor plans.
 - **Avatar Motion Forge**, original premium agent-avatar creation, SVG concepts,
   and Lottie/Rive motion-state planning.
+- **Reconcile**, verifies what production runs, brings the primary checkout up
+  to origin, and cleans up obsolete local worktrees and merged branches.
 
 Built on the open Agent Skills format (`SKILL.md` + optional `references/`,
 `scripts/`, `evals/`), so the same skill content runs across skills-capable
@@ -17,7 +19,7 @@ agents instead of being locked to one runtime.
 ## Why this exists
 
 A skill is the stable unit of reuse. Plugins, MCP, and function tools are just
-adapters around it. This repo keeps the value in two `SKILL.md` files and exposes
+adapters around it. This repo keeps the value in three `SKILL.md` files and exposes
 them three ways: a Claude Code plugin, a Codex plugin, and OpenAI function-tool
 or MCP integrations.
 
@@ -41,6 +43,24 @@ mascot.
 
 - Skill: [`plugins/premium-agent-skills/skills/avatar-motion-forge/SKILL.md`](plugins/premium-agent-skills/skills/avatar-motion-forge/SKILL.md)
 - Originality gate: [`references/originality-checklist.md`](plugins/premium-agent-skills/skills/avatar-motion-forge/references/originality-checklist.md)
+
+### Reconcile
+
+Runs only when you invoke it (`/premium-agent-skills:reconcile`). The default run:
+1. checks each deployed target's source against origin, plus the migration
+   ledger in both directions;
+2. saves local work in the primary checkout to a hash-verified stash pinned
+   under `refs/recovery/`, then fast-forwards the checkout;
+3. removes clean, merged, unclaimed worktrees, stale worktree registrations and
+   merged local branches, and reports the disk space it freed.
+
+It never pushes, merges, deploys, applies migrations, drops stashes or
+force-removes. `audit` is read-only, and remote branch deletion needs
+`remote-cleanup`.
+
+- Skill: [`plugins/premium-agent-skills/skills/reconcile/SKILL.md`](plugins/premium-agent-skills/skills/reconcile/SKILL.md)
+- Windows traps: [`references/windows-shell.md`](plugins/premium-agent-skills/skills/reconcile/references/windows-shell.md)
+- Procedure check on a throwaway repo: [`scripts/fixture-test.sh`](plugins/premium-agent-skills/skills/reconcile/scripts/fixture-test.sh)
 
 ## Install
 
@@ -77,7 +97,7 @@ and [`examples/openai-python`](examples/openai-python/). A remote-MCP config is 
 ```text
 plugins/premium-agent-skills/   installable plugin bundle (no package.json):
   .claude-plugin/plugin.json     Claude Code plugin manifest
-  skills/                        the two skill folders (SKILL.md + references/scripts/evals)
+  skills/                        the skill folders (SKILL.md + references/scripts/evals)
 .claude-plugin/marketplace.json  marketplace manifest (source -> plugins/premium-agent-skills)
 .codex-plugin/plugin.json        Codex plugin manifest
 packages/core/                   shared Zod schemas + validators for the output contracts
@@ -105,6 +125,10 @@ Individual gates: `npm run typecheck`, `npm run test`, `npm run validate:json`,
 
 - Read-only by default. File writes, command execution, and network access are
   approval-gated, not assumed.
+- Reconcile is the exception, and it is explicit-invocation only. Invoking its
+  default mode authorizes local Git changes: a verified stash, a fast-forward,
+  and removal of proven obsolete worktrees and merged local branches. Use
+  `reconcile audit` for a read-only run.
 - No telemetry, no prompt or asset upload by default. Artifacts are generated
   locally.
 - See [`SECURITY.md`](SECURITY.md).
@@ -121,6 +145,7 @@ divergence note. See [`originality-checklist.md`](skills/avatar-motion-forge/ref
 |---|---|
 | Repo Improvement Architect | stable (v0.1.1) |
 | Avatar Motion Forge | stable (v0.1.1) |
+| Reconcile | new (fixture-tested) |
 | Claude Code / Codex plugin install | verified |
 | Lottie starter assets | shipped |
 | Social preview image | shipped |

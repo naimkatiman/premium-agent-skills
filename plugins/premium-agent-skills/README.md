@@ -1,7 +1,7 @@
 # premium-agent-skills (plugin bundle)
 
 This directory is the installable Claude Code / Codex plugin: `.claude-plugin/plugin.json`
-plus the two skills. It is intentionally free of any `package.json` so the plugin
+plus the three skills. It is intentionally free of any `package.json` so the plugin
 installer just copies it (no `npm install`, no workspace symlinks).
 
 The npm/TypeScript project (schemas, validators, examples, tests, CI) lives at the
@@ -11,6 +11,7 @@ repository root and is developer tooling, not part of the installed plugin.
 
 - `skills/repo-improvement-architect/` — bounded, evidence-backed repo audits and CI triage.
 - `skills/avatar-motion-forge/` — original premium mascot SVG + Lottie/Rive motion specs.
+- `skills/reconcile/` — explicit-only: verify production, snapshot and fast-forward the primary checkout, clean up local worktrees and merged branches.
 
 ## Install
 
