@@ -2,7 +2,7 @@
   "name": "premium-agent-skills",
   "version": "0.1.0",
   "private": true,
-  "description": "Two open-source, cross-agent Agent Skills (Repo Improvement Architect and Avatar Motion Forge) packaged for Claude Code, Codex, and OpenAI tool calling.",
+  "description": "Three open-source, cross-agent Agent Skills (Repo Improvement Architect, Avatar Motion Forge and Reconcile) packaged for Claude Code, Codex, and OpenAI tool calling.",
   "type": "module",
   "license": "MIT",
   "author": "Naim Katiman",

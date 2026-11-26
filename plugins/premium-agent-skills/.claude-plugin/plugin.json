@@ -1,7 +1,7 @@
 {
   "name": "premium-agent-skills",
   "version": "0.1.1",
-  "description": "Two reusable skills: Repo Improvement Architect (bounded, evidence-backed repo audits and CI triage) and Avatar Motion Forge (original premium mascot SVG + Lottie/Rive motion specs).",
+  "description": "Three reusable skills: Repo Improvement Architect (bounded, evidence-backed repo audits and CI triage), Avatar Motion Forge (original premium mascot SVG + Lottie/Rive motion specs), and Reconcile (verify production, fast-forward the primary checkout, clean up local worktrees).",
   "author": {
     "name": "Naim Katiman"
   },
