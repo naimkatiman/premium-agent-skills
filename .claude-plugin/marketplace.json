@@ -1,6 +1,6 @@
 {
   "name": "premium-agent-skills",
-  "description": "Marketplace for the premium-agent-skills plugin: three cross-agent Agent Skills (Repo Improvement Architect, Avatar Motion Forge, Reconcile) for Claude Code, Codex, and OpenAI tool calling.",
+  "description": "Marketplace for the premium-agent-skills plugin: three cross-agent Agent Skills (Repo Improvement Architect, Avatar Motion Forge, Reconcile) for Claude Code, Codex, Grok, Devin, and OpenAI tool calling.",
   "owner": {
     "name": "naimkatiman"
   },

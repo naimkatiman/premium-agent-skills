@@ -21,6 +21,12 @@ Constraints: no framework migration, no dependency upgrades above minor.
 ```
 
 ```text
+/premium-agent-skills:reconcile
+```
+
+Reconcile runs only when you type that command. Add `audit` for a read-only pass.
+
+```text
 /premium-agent-skills:avatar-motion-forge
 Mascot: owl. Traits: precise, calm, premium.
 Avoid: childish proportions, copied chat-assistant iconography.
