@@ -1,7 +1,7 @@
 # Premium Agent Skills
 
-Three open-source Agent Skills for Claude Code, Codex, and OpenAI-style tool
-integrations:
+Three open-source Agent Skills for Claude Code, Codex, Grok, Devin, and
+OpenAI-style tool integrations:
 
 - **Repo Improvement Architect**, repo audits, CI triage, and bounded,
   evidence-backed refactor plans.
@@ -20,8 +20,8 @@ agents instead of being locked to one runtime.
 
 A skill is the stable unit of reuse. Plugins, MCP, and function tools are just
 adapters around it. This repo keeps the value in three `SKILL.md` files and exposes
-them three ways: a Claude Code plugin, a Codex plugin, and OpenAI function-tool
-or MCP integrations.
+them five ways: a Claude Code plugin, a Codex plugin, a Grok marketplace
+plugin, a Devin plugin, and OpenAI function-tool or MCP integrations.
 
 ## Skills
 
@@ -46,7 +46,7 @@ mascot.
 
 ### Reconcile
 
-Runs only when you invoke it (`/premium-agent-skills:reconcile`). The default run:
+Runs only when you type it (`/premium-agent-skills:reconcile`). It does not start on its own. The default run:
 1. checks each deployed target's source against origin, plus the migration
    ledger in both directions;
 2. saves local work in the primary checkout to a hash-verified stash pinned
@@ -64,23 +64,62 @@ force-removes. `audit` is read-only, and remote branch deletion needs
 
 ## Install
 
+These steps are for anyone with a GitHub account that can read
+[naimkatiman/premium-agent-skills](https://github.com/naimkatiman/premium-agent-skills).
+You do not need a clone of this repo. Install once in your agent, open a new
+session, then type the command for that agent. Reconcile runs only from that
+command.
+
 ### Claude Code
+
+In a Claude Code session:
 
 ```text
 /plugin marketplace add naimkatiman/premium-agent-skills
 /plugin install premium-agent-skills@premium-agent-skills
 ```
 
-See [`examples/claude-code`](examples/claude-code/).
+Run it with `/premium-agent-skills:reconcile`. Details: [`examples/claude-code`](examples/claude-code/).
 
 ### Codex
 
+In a terminal:
+
 ```text
 codex plugin marketplace add naimkatiman/premium-agent-skills
+codex plugin add premium-agent-skills@premium-agent-skills
 ```
 
-Or drop the skill folders under `.agents/skills/` in your repo. See
-[`examples/codex`](examples/codex/).
+The first command adds the catalog. The second installs the plugin. Open a new
+Codex session and type `$reconcile`. A repo can also vendor the skill folders
+under `.agents/skills/`. Details: [`examples/codex`](examples/codex/).
+
+### Grok
+
+In a terminal:
+
+```text
+grok plugin marketplace add naimkatiman/premium-agent-skills
+grok plugin install premium-agent-skills --trust
+```
+
+Or in Grok, open `/marketplace`, add `naimkatiman/premium-agent-skills`, then
+install `premium-agent-skills`. `--trust` is the confirmation Grok asks for
+before it loads the plugin. Run it with `/premium-agent-skills:reconcile`.
+Details: [`examples/grok`](examples/grok/).
+
+### Devin
+
+In a terminal, or from Customize → Plugins → Add plugin → From repository
+(`naimkatiman/premium-agent-skills`, subdirectory `plugins/premium-agent-skills`):
+
+```text
+devin plugins install naimkatiman/premium-agent-skills#plugins/premium-agent-skills
+```
+
+The `#plugins/premium-agent-skills` suffix is required. The repository root is
+not the plugin. Devin shows a security notice before install. Run it with
+`/premium-agent-skills:reconcile`. Details: [`examples/devin`](examples/devin/).
 
 ### OpenAI (Responses API / Agents SDK)
 
@@ -96,13 +135,14 @@ and [`examples/openai-python`](examples/openai-python/). A remote-MCP config is 
 
 ```text
 plugins/premium-agent-skills/   installable plugin bundle (no package.json):
-  .claude-plugin/plugin.json     Claude Code plugin manifest
+  .claude-plugin/plugin.json     Claude Code plugin manifest (Grok and Devin also read it)
+  .devin-plugin/plugin.json      Devin plugin manifest (same name and version)
   skills/                        the skill folders (SKILL.md + references/scripts/evals)
-.claude-plugin/marketplace.json  marketplace manifest (source -> plugins/premium-agent-skills)
+.claude-plugin/marketplace.json  marketplace manifest (Claude Code and Grok)
 .codex-plugin/plugin.json        Codex plugin manifest
 packages/core/                   shared Zod schemas + validators for the output contracts
 packages/openai-tools/           function-tool and MCP definitions
-examples/                        Claude Code, Codex, OpenAI JS/Python integration demos
+examples/                        Claude Code, Codex, Grok, Devin, OpenAI JS/Python demos
 assets/                          original SVG concepts + Lottie starter
 scripts/                         JSON and SVG validators used by the verify chain
 ```
@@ -125,7 +165,8 @@ Individual gates: `npm run typecheck`, `npm run test`, `npm run validate:json`,
 
 - Read-only by default. File writes, command execution, and network access are
   approval-gated, not assumed.
-- Reconcile is the exception, and it is explicit-invocation only. Invoking its
+- Reconcile is the exception, and it runs only when you type
+  `/premium-agent-skills:reconcile`. Invoking its
   default mode authorizes local Git changes: a verified stash, a fast-forward,
   and removal of proven obsolete worktrees and merged local branches. Use
   `reconcile audit` for a read-only run.
@@ -147,6 +188,8 @@ divergence note. See [`originality-checklist.md`](skills/avatar-motion-forge/ref
 | Avatar Motion Forge | stable (v0.1.1) |
 | Reconcile | new (v0.1.2, fixture-tested) |
 | Claude Code / Codex plugin install | verified |
+| Grok install | commands documented; `grok plugin validate` passed on the bundle |
+| Devin install | commands documented; not installed from this session |
 | Lottie starter assets | shipped |
 | Social preview image | shipped |
 | Rive production exports | roadmap (v0.2) |

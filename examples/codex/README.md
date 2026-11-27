@@ -29,10 +29,14 @@ version's plugin flow:
 
 ```text
 codex plugin marketplace add naimkatiman/premium-agent-skills
+codex plugin add premium-agent-skills@premium-agent-skills
 ```
+
+Open a new Codex session and type `$reconcile`. That is the only way this
+skill starts. `audit` keeps the run read-only.
 
 ## Notes
 
 - Codex sandboxing and approvals apply: the repo-improvement skill stays
   read-only until you approve a write or a command.
-- Skill content is identical across Claude Code and Codex, one `SKILL.md` source.
+- Skill content is one `SKILL.md` source for Claude Code, Codex, Grok, and Devin.

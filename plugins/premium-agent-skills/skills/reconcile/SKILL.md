@@ -2,6 +2,9 @@
 name: reconcile
 description: Use only when the user explicitly asks to reconcile a repository with origin and production, or to clean up local worktrees. Verifies what is deployed, snapshots and fast-forwards the primary checkout, removes proven obsolete worktrees and merged local branches, and reports. Do NOT use for ordinary commits, pushes, or PRs.
 disable-model-invocation: true
+user-invocable: true
+triggers:
+  - user
 ---
 
 # Reconcile repository and deployment state
